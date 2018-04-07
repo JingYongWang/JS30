@@ -73,12 +73,14 @@
     console.log('keyName: \n\n'  + 'key: ' + keyName);
   })
   */
- window.addEventListener('keydown', function (e) {
+  //IIFE -Immediately Invoked Function Expression
+  (function () {  
+    window.addEventListener('keydown', function (e) {
     //class
     //dataset
     
-    //console.log(document.querySelector(`.key[data-key= "${e.keyCode}"]`));
-    
+
+
     let button = document.querySelector(`.key[data-key= "${e.keyCode}"]`)
     let audio = document.querySelector(`audio[data-key= "${e.keyCode}"]`)
     button.classList.add('playing')
@@ -100,6 +102,9 @@
         //console.log('remove');
        })
      })
+
+  })()
+
 
 
 </script>
